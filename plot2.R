@@ -17,8 +17,8 @@ power_consuption <- power_consuption[,c(3:10)]
 # Reorder columns 
 power_consuption <- power_consuption[,c(8,1,2,3,4,5,6,7)]
 
+png(filename = "plot2.png", width = 480, height = 480)
 plot(power_consuption$DateTime, power_consuption$Global_active_power, 
      type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
-dev.copy(png, file = "plot2.png")
 dev.off()

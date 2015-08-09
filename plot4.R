@@ -1,4 +1,4 @@
-## Course Project - Plot 3
+## Course Project - Plot 4
 
 power_consuption <- read.table("../data/household_power_consumption.txt", 
                                header = TRUE, sep = ";", skip = 66636, 
@@ -17,6 +17,7 @@ power_consuption <- power_consuption[,c(3:10)]
 # Reorder columns 
 power_consuption <- power_consuption[,c(8,1,2,3,4,5,6,7)]
 
+png(filename = "plot4.png", width = 480, height = 480)
 
 par(mfrow = c(2,2))
 
@@ -41,5 +42,4 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2",
 plot(power_consuption$DateTime, power_consuption$Global_reactive_power, 
      type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 
-dev.copy(png, file = "plot4.png")
 dev.off()

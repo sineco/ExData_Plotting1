@@ -1,10 +1,5 @@
 ## Course Project - Plot 1
 
-#power_consuption <- read.table("../data/household_power_consumption.txt", 
-#                        header = TRUE, sep = ";", skip=grep("2005-12-31", 
-#                        readLines("../data/household_power_consumption.txt")), 
-#                        nrows = 2879)
-
 power_consuption <- read.table("../data/household_power_consumption.txt", 
                                header = TRUE, sep = ";", skip = 66636, 
                                nrows = 2880)
@@ -22,8 +17,10 @@ power_consuption <- power_consuption[,c(3:10)]
 # Reorder columns 
 power_consuption <- power_consuption[,c(8,1,2,3,4,5,6,7)]
 
+png(filename = "plot1.png", width = 480, height = 480)
+
 hist(power_consuption$Global_active_power, 
      xlab = "Global Active Power (kilowatts).", main = "Global Active Power",
      col = "red")
-dev.copy(png, file = "plot1.png")
+
 dev.off()

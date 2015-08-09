@@ -17,6 +17,7 @@ power_consuption <- power_consuption[,c(3:10)]
 # Reorder columns 
 power_consuption <- power_consuption[,c(8,1,2,3,4,5,6,7)]
 
+png(filename = "plot3.png", width = 480, height = 480)
 plot(power_consuption$DateTime, power_consuption$Sub_metering_1,
      type = "l", xlab = "", ylab = "Energy sub metering", 
      ylim=c(0.0,40.0))
@@ -29,5 +30,4 @@ plot(power_consuption$DateTime, power_consuption$Sub_metering_3,
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2",
                               "Sub_metering_3"), lty = 1, col = c(1,2,4))
 
-dev.copy(png, file = "plot3.png")
 dev.off()
